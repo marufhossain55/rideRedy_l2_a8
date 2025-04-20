@@ -4,7 +4,7 @@ RideReady is a backend API built to manage bike servicing operations for a bike 
 
 ## 🔗 Live Backend
 
-> 🌐 [Live Backend URL Here] (e.g., https:.app)
+> 🌐 [(https://ride-ready-bike-servicing.vercel.app)]
 
 ---
 
@@ -15,43 +15,6 @@ RideReady is a backend API built to manage bike servicing operations for a bike 
 - **TypeScript**
 - **Prisma ORM**
 - **PostgreSQL**
-
----
-
-## 🧱 Database Schema
-
-All tables use **UUIDs** as primary keys.
-
-### 1. Customer Table
-
-| Field      | Type     | Description                 |
-| ---------- | -------- | --------------------------- |
-| customerId | UUID     | Unique identifier           |
-| name       | String   | Full name                   |
-| email      | String   | Unique email                |
-| phone      | String   | Contact number              |
-| createdAt  | DateTime | Auto timestamp when created |
-
-### 2. Bike Table
-
-| Field      | Type   | Description                      |
-| ---------- | ------ | -------------------------------- |
-| bikeId     | UUID   | Unique identifier                |
-| brand      | String | Brand name (e.g., Yamaha)        |
-| model      | String | Model name                       |
-| year       | Int    | Manufacturing year               |
-| customerId | UUID   | Foreign key referencing Customer |
-
-### 3. ServiceRecord Table
-
-| Field          | Type     | Description                              |
-| -------------- | -------- | ---------------------------------------- |
-| serviceId      | UUID     | Unique service record ID                 |
-| bikeId         | UUID     | Foreign key referencing Bike             |
-| serviceDate    | DateTime | Date the service started                 |
-| completionDate | DateTime | Nullable. Date service completed         |
-| description    | String   | Service details (e.g., oil change)       |
-| status         | String   | Status: “pending”, “in-progress”, “done” |
 
 ---
 
