@@ -1,0 +1,40 @@
+import status from 'http-status';
+import { BikeServices } from './bike.service';
+import catchAsync from '../../../utils/catchAsync';
+import sendResponse from '../../../utils/sendResponse';
+
+const CreateBike = catchAsync(async (req, res) => {
+  const result = await BikeServices.createBike(req.body);
+  sendResponse(res, {
+    statusCode: status.CREATED,
+    success: true,
+    message: 'Bike added successfully',
+    data: result,
+  });
+});
+
+const GetAllBike = catchAsync(async (req, res) => {
+  const result = await BikeServices.getAllBike();
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Bikes fetched successfully',
+    data: result,
+  });
+});
+
+const GetBikeById = catchAsync(async (req, res) => {
+  const result = await BikeServices.getBikeById(req.params.id);
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Bike fetched successfully',
+    data: result,
+  });
+});
+
+export const BikeController = {
+  CreateBike,
+  GetAllBike,
+  GetBikeById,
+};
