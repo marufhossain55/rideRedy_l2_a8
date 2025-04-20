@@ -7,14 +7,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id         Int      @id @default(autoincrement())
-  title      String
-  content    String
-  published  Boolean  @default(false)
-  authorName String?
+model Customer {
+  customerId String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  phone      String
   createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
 
-  @@map("posts")
+  @@map("customers")
+}
+
+model Bike {
+  bikeId     String @id @default(uuid())
+  brand      String
+  model      String
+  year       Int
+  customerId String
+
+  @@map("bikes")
 }
