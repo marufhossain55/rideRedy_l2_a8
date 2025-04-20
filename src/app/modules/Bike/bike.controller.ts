@@ -3,7 +3,7 @@ import { BikeServices } from './bike.service';
 import catchAsync from '../../../utils/catchAsync';
 import sendResponse from '../../../utils/sendResponse';
 
-const CreateBike = catchAsync(async (req, res) => {
+const createBike = catchAsync(async (req, res) => {
   const result = await BikeServices.createBike(req.body);
   sendResponse(res, {
     statusCode: status.CREATED,
@@ -13,7 +13,7 @@ const CreateBike = catchAsync(async (req, res) => {
   });
 });
 
-const GetAllBike = catchAsync(async (req, res) => {
+const getAllBike = catchAsync(async (req, res) => {
   const result = await BikeServices.getAllBike();
   sendResponse(res, {
     statusCode: status.OK,
@@ -23,7 +23,7 @@ const GetAllBike = catchAsync(async (req, res) => {
   });
 });
 
-const GetBikeById = catchAsync(async (req, res) => {
+const getBikeById = catchAsync(async (req, res) => {
   const result = await BikeServices.getBikeById(req.params.id);
   sendResponse(res, {
     statusCode: status.OK,
@@ -34,7 +34,7 @@ const GetBikeById = catchAsync(async (req, res) => {
 });
 
 export const BikeController = {
-  CreateBike,
-  GetAllBike,
-  GetBikeById,
+  createBike,
+  getAllBike,
+  getBikeById,
 };
