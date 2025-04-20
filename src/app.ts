@@ -3,8 +3,8 @@ import cors from 'cors';
 
 import status from 'http-status';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import router from './app/routers';
 const app: Application = express();
-
 app.use(cors());
 
 // parser
