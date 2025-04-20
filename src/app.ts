@@ -16,7 +16,7 @@ app.use('/api', router);
 app.use(globalErrorHandler);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('BikeCare-Hub Server is running');
+  res.send('Server is running ⚡⚡⚡');
 });
 
 app.use((req: Request, res: Response, next: NextFunction) => {
